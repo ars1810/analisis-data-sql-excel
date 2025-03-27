@@ -9,16 +9,6 @@ CREATE TABLE sales_data (
     lowest_price DECIMAL(10,2)
 );
 
-SELECT 
-    product_name AS product, 
-    COUNT(*) AS transaction_count, 
-    SUM(price * quantity) AS total_sales, 
-    AVG(price * quantity) AS avg_sales, 
-    MAX(price) AS highest_price, 
-    MIN(price) AS lowest_price
-FROM transactions
-GROUP BY product_name;
-
     INSERT INTO sales_data (product, transaction_count, total_sales, avg_sales, highest_price, lowest_price)
     VALUES ('Smartphone iPhone', 410.0, 3400.0, 8.29, 1133.33, 666.43);
     
